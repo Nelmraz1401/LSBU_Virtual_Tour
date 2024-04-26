@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="aframe.js"></script>
+        <!--Environment Script-->
+        
+    </head>
+
+    <body>
+    <a-scene>
+        <a-assets>
+            <video id="myVideo" src="media/Switzerland_360.mp4" autoplay loop="true" preload="auto"></video>
+        </a-assets>
+    
+        <!-- Video entity -->
+        <a-video src="#myVideo" width="16" height="9" position="0 1.6 -3"></a-video>
+    
+        <!-- Invisible entity for user interaction -->
+        <a-entity position="0 1.6 -3" geometry="primitive: plane; height: 9; width: 16" material="opacity: 0"
+                  event-set__click="_target: #myVideo; _delay: 0; playSound"></a-entity>
+                  <video id="myVideo" src="media/Switzerland_360.mp4" autoplay muted loop></video>
+
+
+        <!--player viewport-->
+        <a-camera position="2 3 5" >    
+            <!--curson circle -->
+            <a-cursor color="red"> </a-cursor>
+        </a-camera>
+    </a-scene>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSBU 360 Virtual Tour</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // This function redirects the user to soundtest.html when the "Enter 360" button is clicked.
+        function enter360() {
+            window.location.href = 'selectionmenu.html'; // Adjust the path if necessary.
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const selector = document.getElementById('locationSelector');
+            selector.addEventListener('change', function() {
+                const selectedPage = this.value;
+                if (selectedPage) {
+                    window.location.href = selectedPage;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="media/1000088358_animation.mp4" type="video/mp4">
+    </video>
+
+    <div class="header">
+        <div class="header-title">LSBU 360</div>
+        <div class="header-nav">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <img src="/media/logo.png" alt="LSBU Logo" class="logo-icon">
+        <h1>Welcome to<br>London South Bank University</h1>
+        <!-- The button now correctly calls the enter360 function on click -->
+        <button id="enter360" onclick="enter360()">Enter Full 360 Tour</button>
+    </div>
+    <div class="main-content">
+        <h1>Select a Place to visit</h1>
+        <select id="locationSelector" class="custom-select">
+            <option value="">Select a location...</option>
+            <option value="entrance.html">LSBU ENTRANCE</option>
+            <option value="library.html">LIBRARY</option>
+            <option value="museum.html">MUSEUM</option>
+            <option value="gradscafe.html">GRAD'S CAFE</option>
+            <option value="keyworth.html">KEYWORTH</option>
+        </select>
+    </div>
+    
+
+    <div class="footer">
+        <div class="footer-text">VR Coursework Project</div>
+        <div class="footer-text">Developed by Techbabes</div>
+        <div class="footer-text">Powered by A-Frame</div>
+    </div>
+</body>
+
+</html>
