@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../aframe.js"></script>
+        <!--Environment Script-->
+    </head>
+
+    <body>
+    <a-scene>
+        <a-assets>
+            <video id="entrance" autoplay loop="true" src="/media/360-videos/Entrance.mp4">
+        </a-assets>
+
+        <a-videosphere src="#entrance"></a-videosphere>
+
+                <!-- Button with sound -->
+                <a-box position="-12 2 5" rotation="0 0 0" color="#4CC3D9"
+                play-sound-on-click
+                sound="src: #click-sound" animation__1="property: rotation; to: 0 360 0; dir: alternate; dur: 2000; loop: true"> <!-- Referencing the sound asset -->
+                </a-box>
+                <!-- Referencing the sound asset -->
+                <a-box position="3 2 -5" rotation="0 0 0" color="#red"
+                play-sound-on-click
+                sound="src: #sound2"
+                bounce-on-click
+                animation__bounce="property: position; to: 3 5 -5; dir: alternate; dur: 500; elasticity: 500; loop: 2; startEvents: bounce"> 
+                </a-box>
+                <!-- BOX that stop the sounds-->
+                <a-box position="6 2 -5" rotation="0 0 0" color="#FFC65D"
+                stop-all-sounds>
+         </a-box>
+        
+
+        <!--player viewport-->
+        <a-camera position="2 3 5" rotation="10 30 0 >    
+            <!--curson circle -->
+            <a-cursor color="red"> </a-cursor>
+        </a-camera>
+    </a-scene>
+    </body>
+</html>

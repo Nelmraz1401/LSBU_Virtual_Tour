@@ -1,0 +1,15 @@
+            AFRAME.registerComponent('click-handler', {
+                init: function () {
+                    this.el.addEventListener('click', (e) => {
+                        let src = this.el.getAttribute('data-src');
+                        let videosphere = document.querySelector('a-videosphere');
+                        if (videosphere) {
+                            videosphere.setAttribute('src', src);
+                        }
+                    });
+                }
+            });
+
+            document.querySelectorAll('.clickable').forEach(el => {
+                el.setAttribute('click-handler', '');
+            });

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/aframe.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-assets>
+                <video id="location1" autoplay loop="true" src="/media/360-videos/library.mp4"></video>
+                <a-assets-item id="location2" src="/media/360-pictures/library/corner1.jpg"></a-assets-item>
+                <a-assets-item id="location3" src="/media/360-pictures/library/corner2.jpg"></a-assets-item>
+                <a-assets-item id="location4" src="/media/360-pictures/library/corner3.jpg"></a-assets-item>
+                <a-assets-item id="location5" src="/media/360-pictures/library/corner4.jpg"></a-assets-item>
+            </a-assets>
+
+            <!-- Main Scene -->
+            <a-entity id="scene1" position="0 0 0" rotation="0 0 0" visible="true">
+                <a-videosphere src="#location1"></a-videosphere>
+                <!-- Box Triggers -->
+                <a-box position="-19.473 11 -14.050" rotation="0 0 0" color="#34eb3d"
+                       onclick="switchScene('scene2')" animation__click="property: position; to: -19.473 12 -14.050; dur: 500; easing: easeInOutQuad; loop: true; dir: alternate">
+                    <a-text value="Click to teleport to scene2" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+                </a-box>
+                <a-box position="0.317 10.248 37.215" rotation="0 0 0" color="#4CC3D9"
+                       onclick="switchScene('scene3')" animation__click="property: position; to: 0.317 11.248 37.215; dur: 500; easing: easeInOutQuad; loop: true; dir: alternate">
+                </a-box>
+                <a-box position="48.189 7.898 -25.758" rotation="0 0 0" color="#4CC3D9"
+                       onclick="switchScene('scene4')" animation__click="property: position; to: 48.189 9 -25.758; dur: 500; easing: easeInOutQuad; loop: true; dir: alternate">
+                </a-box>
+                <a-box position="38.275 5.530 0.895" rotation="0 0 0" color="#4CC3D9"
+                       onclick="switchScene('scene5')" animation__click="property: position; to: 38.275 6.5 0.895; dur: 500; easing: easeInOutQuad; loop: true; dir: alternate">
+                </a-box>
+            </a-entity>
+
+            <!-- Other Scenes -->
+            <a-entity id="scene2" position="-19.473 11 -14.050" rotation="0 0 0" visible="false">
+                <a-sky src="#location2"></a-sky>
+            </a-entity>
+            <!-- Define more scenes here using similar pattern -->
+
+            <a-camera position="2 3 5">
+                <a-cursor color="red"></a-cursor>
+            </a-camera>
+        </a-scene>
+
+        <script type="text/javascript">
+            function switchScene(activeSceneId) {
+                console.log(`Switching to scene: ${activeSceneId}`);
+                const scenes = ['scene1', 'scene2'];
+                scenes.forEach(sceneId => {
+                    const sceneEl = document.getElementById(sceneId);
+                    if (sceneEl) {
+                        console.log(`Hiding scene: ${sceneId}`);
+                        sceneEl.setAttribute('visible', 'false');
+                    } else {
+                        console.error(`No element with ID ${sceneId} found.`);
+                    }
+                });
+                const activeSceneEl = document.getElementById(activeSceneId);
+                if (activeSceneEl) {
+                    console.log(`Showing scene: ${activeSceneId}`);
+                    activeSceneEl.setAttribute('visible', 'true');
+                } else {
+                    console.error(`No element with ID ${activeSceneId} found.`);
+                }
+            }
+            
+        </script>
+    </body>
+</html>

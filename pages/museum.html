@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../aframe.js"></script>
+        <!-- Environment Script -->
+    </head>
+    <body>
+        <a-scene>
+            <a-assets>
+                <video id="museum" autoplay loop="true" src="/media/360-videos/museum.mp4"></video>
+            </a-assets>
+
+            <a-videosphere src="#museum"></a-videosphere>
+
+            <!-- Player viewport -->
+            <a-camera position="-2 3 5" rotation="0 90 0>
+                <!-- Cursor circle -->
+                <a-cursor color="red"></a-cursor>
+            </a-camera>
+        </a-scene>
+    </body>
+</html>

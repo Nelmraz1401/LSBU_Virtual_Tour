@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="a-fullscreen" foxifield>
+    <head>
+        <script src="aframe.js"></script>
+        <script type="text/javascript">
+            // Existing functions
+
+        
+            // Redirection function
+            function redirectToPage() {
+                window.location.href = 'selectionmenu.html'; // Change this URL to your target page
+            }
+        </script>
+    </head>
+
+    <body>
+        <a-scene>
+            <a-assets>
+                <video id="library" autoplay loop="true" src="/media/360-videos/Grads Cafe.mp4"></video>
+                <img id="location1" src="/assets/gradcorner1.jpg">
+                <img id="location2" src="/assets/gradcorner2.jpg">
+                <img id="location3" src="/assets/gradcorner3.jpg">
+                <img id="location4" src="/assets/gradcorner4.jpg">
+                <img id="boxtexture" src="/assets/teleport.jpg">
+            </a-assets>
+
+            <!-- Main scene -->
+            <a-entity id="mainscene" position="0 -1 0" visible="true">
+                <a-videosphere src="#library"></a-videosphere>
+                <a-box color="red" position="-15.635 1.710 -3.775" scale="1 1 1" rotation="0 1.310 0"  onclick="scene_1()">
+                    <a-text value="teleport here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+                <a-box color="green" position="-13.995 2.256 19.666" scale="1 1 1" rotation="0.350 45.130 0.000" scale="1 1 1" onclick="scene_2()">
+                    <a-text value="Teleport here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+                
+                <a-box color="blue" position="-101.838 2.995 26.734" scale="3 3 3" rotation="0 0 0" onclick="scene_3()">
+                    <a-text value="teleport to here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+    
+                <a-box color="yellow" position="-89.489 3.068 -5.209" scale="3 3 3" rotation="0 0 0" onclick="scene_4()">
+                    <a-text value="teleport to here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+
+                <a-sphere  position="12.292 5 -3.055" scale="2 2 2" rotation="0 190.000 0" onclick="redirectToPage()" material="src: #boxtexture"
+                animation="property: rotation; to: 0 460 0; loop: true; dur: 10000; easing: linear">
+                    <a-text value="Back to Menu" rotation="0 90 0" position="0.280 1.580 2.220" scale="4 4 4"></a-text>
+                </a-sphere>
+            </a-entity>
+
+
+
+            <!-- Scene 1 -->
+            <a-entity id="scene1" position="0 -1 0" visible="false">
+                <a-sky src="#location1"></a-sky>
+
+                <a-box color="red" position="-2.684 4.011 -10.993" scale="1 1 1" rotation="0 280.000 0" onclick="mainscene()">
+                    <a-text value="Go back" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+
+                <a-box color="green" position="28.188 6.571 -26.767" scale=" 2 2 2" rotation="0  230.000 0" onclick="scene_2()">
+                    <a-text value="Teleport here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+                
+                <a-box color="blue" position="113.322 9.400 100.215" scale="5 5 5" rotation="0 -230.000 0"  onclick="scene_3()">
+                    <a-text value="Teleport Here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+    
+                <a-box color="yellow" position="21.681 4.548 41.024" scale="1.5 1.5 1.5" rotation="0 -230.000 0" onclick="scene_4()">
+                    <a-text value="Teleport here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+            </a-entity>
+
+            <!-- Scene 2 -->
+            <a-entity id="scene2" position="0 -1 0" visible="false">
+                <a-sky src="#location2"></a-sky>
+
+                <a-box color="red" position="-30.000 5.655 -1.884" scale="2 2 2" rotation="0 0 0" onclick="mainscene()">
+                    <a-text value="Go back" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+                
+                <a-box color="blue" position="51.669 14.271 68.177" scale="3 3 3" rotation="0 -230.000 0" onclick="scene_3()">
+                    <a-text value="Click box to teleport to scene 3" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+    
+                <a-box color="yellow" position="30.862 18.440 101.401" scale="3 3 3" rotation="0 120 0" onclick="scene_4()">
+                    <a-text value="Click box to teleport to scene 4" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+            </a-entity>
+
+            <!-- Scene 3 -->
+            <a-entity id="scene3" position="0 -1 0" visible="false">
+                <a-sky src="#location3"></a-sky>
+
+                <a-box color="red" position="23.445 11.732 64.583" scale="2 2 2" rotation="0 100 0" onclick="mainscene()">
+                    <a-text value="Go back" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+
+                <a-box color="green" position="1.687 15.231 96.453" scale="3 3 3" rotation="0 100 0" onclick="scene_2()">
+                    <a-text value="Teleport Here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+                
+    
+                <a-box color="yellow" position="56.616 8.396 -10.627" scale="3 3 3" rotation="0 190.000 0" onclick="scene_4()">
+                    <a-text value="Teleport here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+            </a-entity>
+
+            <!-- Scene 4 -->
+            <a-entity id="scene4" position="0 -1 0" visible="false">
+                <a-sky src="#location4"></a-sky>
+                <a-box color="red" position="90.126 14.829 44.225" scale="1.5 1.5 1.5" rotation="0 153.650 0" onclick="mainscene()">
+                    <a-text value="Go back" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+
+                <a-box color="green" position="84.678 18.104 86.221" scale="4 4 4" rotation="-4.790 100.630 -3.480" onclick="scene_2()">
+                    <a-text value="Click box to teleport to scene 3" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+                
+                <a-box color="blue" position="-35.537 6.280 37.170" scale="3 3 3" rotation="0 50.480 0" onclick="scene_3()">
+                    <a-text value="Teleport here" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
+                </a-box>
+    
+            </a-entity>
+
+            <!-- Player viewport -->
+            <a-camera position="0 2 0">
+                <!-- Cursor circle -->
+                <a-cursor color="red"></a-cursor>
+            </a-camera>
+        </a-scene>
+
+        <script type="text/javascript">
+            // Teleportation functions
+
+            function mainscene() {
+                document.getElementById('mainscene').setAttribute('visible', 'true');
+                document.getElementById('scene1').setAttribute('visible', 'false');
+                document.getElementById('scene2').setAttribute('visible', 'false');
+                document.getElementById('scene3').setAttribute('visible', 'false');
+                document.getElementById('scene4').setAttribute('visible', 'false');
+            }
+            function scene_1() {
+                document.getElementById('mainscene').setAttribute('visible', 'false');
+                document.getElementById('scene1').setAttribute('visible', 'true');
+                document.getElementById('scene2').setAttribute('visible', 'false');
+                document.getElementById('scene3').setAttribute('visible', 'false');
+                document.getElementById('scene4').setAttribute('visible', 'false');
+            }
+
+            function scene_2() {
+                document.getElementById('mainscene').setAttribute('visible', 'false');
+                document.getElementById('scene1').setAttribute('visible', 'false');
+                document.getElementById('scene2').setAttribute('visible', 'true');
+                document.getElementById('scene3').setAttribute('visible', 'false');
+                document.getElementById('scene4').setAttribute('visible', 'false');
+            }
+
+            function scene_3() {
+                document.getElementById('mainscene').setAttribute('visible', 'false');
+                document.getElementById('scene1').setAttribute('visible', 'false');
+                document.getElementById('scene2').setAttribute('visible', 'false');
+                document.getElementById('scene3').setAttribute('visible', 'true');
+                document.getElementById('scene4').setAttribute('visible', 'false');
+            }
+
+            function scene_4() {
+                document.getElementById('mainscene').setAttribute('visible', 'false');
+                document.getElementById('scene1').setAttribute('visible', 'false');
+                document.getElementById('scene2').setAttribute('visible', 'false');
+                document.getElementById('scene3').setAttribute('visible', 'false');
+                document.getElementById('scene4').setAttribute('visible', 'true');
+            }
+        </script>
+    </body>
+</html>

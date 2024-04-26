@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../aframe.js"></script>
+        <!--Environment Script-->
+    </head>
+
+    <body>
+    <a-scene>
+        <a-assets>
+            <video id="gradscafe" autoplay loop="true" src="/media/360-videos/Grads Cafe.mp4">
+        </a-assets>
+
+        <a-videosphere src="#gradscafe"></a-videosphere>
+
+        <!--player viewport-->
+        <a-camera position="2 3 5" >    
+            <!--curson circle -->
+            <a-cursor color="red"> </a-cursor>
+        </a-camera>
+    </a-scene>
+    </body>
+</html>
