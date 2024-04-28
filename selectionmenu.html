@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>LSBU Virtual Places</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.2.0/dist/aframe-event-set-component.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Select all boxes with the 'change-scene' class
@@ -30,13 +32,20 @@
             <img id="lsbulogo" src="/media/logo.png">
             <img id="banner" src="/media/banner.jpg">
             <video id="imvideo" src="/media/1000088358_animation.mp4" autoplay loop="true" crossorigin="anonymous"></video>
+            <a-asset-item id="teacher" src="/assets/teacher_dance_hip_hop.glb" ></a-asset-item>
+            <a-asset-item id="fireling" src="/assets/firelings.glb" ></a-asset-item>
+            <a-asset-item id="student" src="/assets/animated_instructor_avatar.glb" ></a-asset-item>
+            <a-asset-item id="nelmar" src="https://models.readyplayer.me/662ed4766dd1710070c58b01.glb" ></a-asset-item>
         </a-assets>
         <!-- Sound Component -->
         <a-sound src="#backgroundMusic" autoplay="true" loop="true" volume="0.5"></a-sound>
         <!-- Enclosed Theater Setup -->
         <!-- Video Screen -->
         <a-video src="#theaterVideo" width="20" height="10" position="0 0 -18.909"></a-video>
-
+        <a-gltf-model src="#teacher" position="-14.564 -9.438 -11.205" scale="5 5 5" rotation="0 40.000 0" animation-mixer="clip: mixamo.com"></a-gltf-model>
+        <a-gltf-model src="#fireling" position="-14.564 -9.438 -11.205" scale="5 5 5" rotation="0 40.000 0" animation-mixer="clip: Animation"></a-gltf-model>
+        <a-gltf-model src="#student" position="14.564 -9.438 -11.205" scale="5 5 5" rotation="0 -40.000 0" animation-mixer="clip: mixamo.com"></a-gltf-model>
+        <a-gltf-model src="#nelmar" position="14.646 -9.438 -11.205" scale="5 5 5" rotation="0 -40.690 0" animation-mixer="clip: "></a-gltf-model>
         <!-- Back Wall -->
         <a-box position="0 0 -19.527" rotation="0 0 0" width="40" height="20" depth="1" material="src: #wallTexture"></a-box>
 
