@@ -2,6 +2,8 @@
 <html class="a-fullscreen" foxifield>
     <head>
         <script src="aframe.js"></script>
+        <script src="https://unpkg.com/aframe-extras/dist/aframe-extras.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@5.2.0/dist/aframe-event-set-component.min.js"></script>
         <script type="text/javascript">
             // Existing functions
 
@@ -22,6 +24,7 @@
                 <img id="location3" src="/assets/museum3.jpg">
                 <img id="location4" src="/assets/museum4.jpg">
                 <img id="boxtexture" src="/assets/teleport.jpg">
+                <a-asset-item id="orb" src="/assets/cyber_orb.glb" ></a-asset-item>
             </a-assets>
 
             <!-- Main scene -->
@@ -42,8 +45,7 @@
                     <a-text value="Teleport" rotation="0 90 0" position="0 1 1" scale="4 4 4"></a-text>
                 </a-box>
         
-                <a-sphere position="7.404 5 18.951" scale="2 2 2" rotation="0 100 0" onclick="redirectToPage()" material="src: #boxtexture" 
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
+                <a-gltf-model src="#orb" position="7.404 5 18.951" scale="2 2 2" rotation="0 100 0" onclick="redirectToPage()" animation-mixer="clip: Animation" >
           <a-text value="Back to Menu" rotation="0 90 0" position="0.280 1.580 2.220" scale="4 4 4"></a-text>
       </a-sphere>
       
