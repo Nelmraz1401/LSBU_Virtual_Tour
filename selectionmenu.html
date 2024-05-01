@@ -35,6 +35,10 @@
             <a-asset-item id="teacher" src="/assets/teacher_dance_hip_hop.glb" ></a-asset-item>
             <a-asset-item id="fireling" src="/assets/firelings.glb" ></a-asset-item>
             <a-asset-item id="student" src="/assets/animated_instructor_avatar.glb" ></a-asset-item>
+            <a-asset-item id="butterfly1" src="/assets/animated_butterfly.glb" ></a-asset-item>
+            <a-asset-item id="butterfly2" src="/assets/butterflies.glb" ></a-asset-item>
+            <a-asset-item id="book" src="/assets/book.glb" ></a-asset-item>
+            <a-asset-item id="table" src="/assets/table_with_things.glb" ></a-asset-item>
         </a-assets>
         <!-- Sound Component -->
         <a-sound src="#backgroundMusic" autoplay="true" loop="true" volume="0.5"></a-sound>
@@ -42,8 +46,29 @@
         <!-- Video Screen -->
         <a-video src="#theaterVideo" width="20" height="10" position="0 0 -18.909"></a-video>
         <a-gltf-model src="#teacher" position="-14.564 -9.438 -11.205" scale="5 5 5" rotation="0 40.000 0" animation-mixer="clip: mixamo.com"></a-gltf-model>
-        <a-gltf-model src="#fireling" position="-14.564 -9.438 -11.205" scale="5 5 5" rotation="0 40.000 0" animation-mixer="clip: Animation"></a-gltf-model>
-        <a-gltf-model src="#student" position="14.564 -9.438 -11.205" scale="5 5 5" rotation="0 -40.000 0" animation-mixer="clip: mixamo.com"></a-gltf-model>
+        <!-- <a-gltf-model src="#fireling" position="-14.564 -9.438 -11.205" scale="5 5 5" rotation="0 40.000 0" animation-mixer="clip: Animation"></a-gltf-model> -->
+        <a-gltf-model src="#student" position="14.564 -9.438 -11.205" scale="5 5 5" rotation="0 -40.000 0" animation-mixer="clip: Armature|mixamo.com|Layer0"></a-gltf-model>
+        <a-gltf-model src="#butterfly1" position="-5.943 -8.268 -18.200" scale="0.5 0.5 0.5" rotation="0 30.000 0" animation-mixer="clip: Flying"
+        animation__hover="property: position; dir: alternate; dur: 1500; easing: easeInOutSine; loop: true; from: -5.943 -8.268 -18.200; to: -5.943 -7.768 -18.200">
+        </a-gltf-model>
+
+        <a-gltf-model src="#butterfly2" position="5.943 -8.268 -18.200" scale="0.009 0.009 0.009" rotation="0 -53.990 0" animation-mixer="clip: Take 001"
+        animation__hover="property: position; dir: alternate; dur: 1500; easing: easeInOutSine; loop: true; from: 5.943 -8.268 -18.200; to: 5.943 -7.768 -18.200">
+        </a-gltf-model>
+
+        <a-gltf-model src="#book" 
+        position="10.698 -3.727 -8.312" 
+        scale="0.5 0.5 0.5" 
+        rotation="0 120.010 0" 
+        animation-mixer="clip: Book Open/Close" >
+        </a-gltf-model>
+
+        <a-gltf-model src="#table" position="10.414 -8.268 -7.341" scale="0.700 0.700 0.700" rotation="0 50.000 0"></a-gltf-model>
+
+
+    
+    
+    
 
         <!-- Back Wall -->
         <a-box position="0 0 -19.527" rotation="0 0 0" width="40" height="20" depth="1" material="src: #wallTexture"></a-box>
@@ -65,44 +90,62 @@
         <a-box position="-0.025 -6.962 -18.445" rotation="0 0 0" color="#FFC65D"
         change-scene data-url="index.html"
         geometry="primitive: box; width: 4; height: 1; depth: 0.2"
-        material="src: #buttontexture1" scale="2 2 2">
-        <a-text scale="2 2 2" value="Main Menu" align="center" color="white" position="0 0 0.1"></a-text>
+        material="src: #buttontexture1" scale="2 2 2"
+        animation__mouseenter="property: scale; to: 2.2 2.2 2.2; startEvents: mouseenter; dur: 200"
+        animation__mouseleave="property: scale; to: 2 2 2; startEvents: mouseleave; dur: 200">
+            <a-text scale="2 2 2" value="Main Menu" align="center" color="white" position="0 0 0.1"></a-text>
         </a-box>
-        <!-- Studen Life Center -->
+
+        <!-- Student Life Center -->
         <a-box position="-14.516 3.147 -18.445" rotation="0 0 0" color="#FFC65D"
         change-scene data-url="entrance.html"
         geometry="primitive: box; width: 4; height: 1; depth: 0.2"
-        material="src: #buttontexture" scale="2 2 2">
-        <a-text scale="2 2 2" value="Student Centre" align="center" color="white" position="0 0 0.1"></a-text>
+        material="src: #buttontexture" scale="2 2 2"
+        animation__mouseenter="property: scale; to: 2.2 2.2 2.2; startEvents: mouseenter; dur: 200"
+        animation__mouseleave="property: scale; to: 2 2 2; startEvents: mouseleave; dur: 200">
+            <a-text scale="2 2 2" value="Student Centre" align="center" color="white" position="0 0 0.1"></a-text>
         </a-box>
+
         <!-- Grad's Cafe -->
         <a-box position="-14.469 -1.818 -18.452" rotation="0 0 0" color="#FFC65D"
         change-scene data-url="gradscafe.html"
         geometry="primitive: box; width: 4; height: 1; depth: 0.2"
-        material="src: #buttontexture" scale="2 2 2">
-        <a-text scale="2 2 2" value="Grad's Cafe" align="center" color="white" position="0 0 0.1"></a-text>
+        material="src: #buttontexture" scale="2 2 2"
+        animation__mouseenter="property: scale; to: 2.2 2.2 2.2; startEvents: mouseenter; dur: 200"
+        animation__mouseleave="property: scale; to: 2 2 2; startEvents: mouseleave; dur: 200">
+            <a-text scale="2 2 2" value="Grad's Cafe" align="center" color="white" position="0 0 0.1"></a-text>
         </a-box>
+
         <!-- Museum -->
         <a-box position="14.485 2.933 -18.579" rotation="0 0 0" color="#FFC65D"
         change-scene data-url="museum.html"
         geometry="primitive: box; width: 4; height: 1; depth: 0.2"
-        material="src: #buttontexture" scale="2 2 2">
-        <a-text scale="2 2 2" value="Museum" align="center" color="white" position="0 0 0.1"></a-text>
+        material="src: #buttontexture" scale="2 2 2"
+        animation__mouseenter="property: scale; to: 2.2 2.2 2.2; startEvents: mouseenter; dur: 200"
+        animation__mouseleave="property: scale; to: 2 2 2; startEvents: mouseleave; dur: 200">
+            <a-text scale="2 2 2" value="Museum" align="center" color="white" position="0 0 0.1"></a-text>
         </a-box>
-        <!-- keyworth -->
+
+        <!-- Keyworth -->
         <a-box position="14.713 -1.817 -18.852" rotation="0 0 0" color="#FFC65D"
         change-scene data-url="keyworth.html"
         geometry="primitive: box; width: 4; height: 1; depth: 0.2"
-        material="src: #buttontexture" scale="2 2 2">
-        <a-text scale="2 2 2" value="Keyworth" align="center" color="white" position="0 0 0.1"></a-text>
+        material="src: #buttontexture" scale="2 2 2"
+        animation__mouseenter="property: scale; to: 2.2 2.2 2.2; startEvents: mouseenter; dur: 200"
+        animation__mouseleave="property: scale; to: 2 2 2; startEvents: mouseleave; dur: 200">
+            <a-text scale="2 2 2" value="Keyworth" align="center" color="white" position="0 0 0.1"></a-text>
         </a-box>
+
         <!-- Library -->
         <a-box position="-0.025 6.261 -18.445" rotation="0 0 0" color="#FFC65D"
         change-scene data-url="library.html"
         geometry="primitive: box; width: 4; height: 1; depth: 0.2"
-        material="src: #buttontexture1" scale="2 2 2">
-        <a-text scale="2 2 2" value="Library" align="center" color="white" position="0 0 0.1"></a-text>
+        material="src: #buttontexture1" scale="2 2 2"
+        animation__mouseenter="property: scale; to: 2.2 2.2 2.2; startEvents: mouseenter; dur: 200"
+        animation__mouseleave="property: scale; to: 2 2 2; startEvents: mouseleave; dur: 200">
+            <a-text scale="2 2 2" value="Library" align="center" color="white" position="0 0 0.1"></a-text>
         </a-box>
+
         <a-image src="#lsbulogo" position="-18.734 1.000 -0.820" scale="7 5 5" rotation="0 100 0"></a-image>
         <a-image src="#banner" position="18 1 0" scale="20.000 5 0" rotation="0 -90 0"></a-image>
         <a-video src="#imvideo" width="20" height="10" position="0 0 18.590" rotation="0 180.000 0"></a-video>
